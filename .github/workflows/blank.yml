@@ -18,7 +18,7 @@ jobs:
       # 指定login命令登录hub.docker.com，帐号和密码已经在GitHub网页中配置好了
       run: 
         docker login  registry.cn-hangzhou.aliyuncs.com -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-        # docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+        #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
         docker build --output "type=image,push=true" --tag xuefengfeiwu1/myimg:v1 .
