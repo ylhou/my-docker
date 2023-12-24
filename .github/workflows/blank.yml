@@ -9,6 +9,8 @@ jobs:
     # 当前脚本是在容器中运行的，对应的镜像是ubuntu-latest
     runs-on: ubuntu-latest
     steps:
+    # 检出代码
+    - uses: actions/checkout@v2
     - name: Login docker hub
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
