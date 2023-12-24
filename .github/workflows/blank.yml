@@ -19,6 +19,5 @@ jobs:
       run: 
         echo "${DOCKER_PASSWORD}" | docker login --username ${DOCKER_USERNAME} --password-stdin
     - name: Build dockerfile
-      # 构建镜像，用buildx可以同时构建X86和ARM架构的镜像，然后推送到hub.docker.com
       run: 
         docker build --output "type=image,push=true" --tag xuefengfeiwu1/myimg:v1 .
