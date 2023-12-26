@@ -1,2 +1,2 @@
 FROM python:3.10-slim
-RUN  apt-get update && apt-get install ffmpeg
+RUN  export DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install ffmpeg
