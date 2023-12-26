@@ -14,6 +14,7 @@ jobs:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJSON(github) }}
+      run: echo "Hello ${{ github.event.commits[0].id }}"
     - name: Login docker hub
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
