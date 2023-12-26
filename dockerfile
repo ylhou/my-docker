@@ -1,2 +1,2 @@
 from python:3.8
-run apt install ffmpeg
+run apt update && apt apt install ffmpeg
