@@ -3,6 +3,6 @@ RUN  export DEBIAN_FRONTEND=noninteractive && apt-get -qq update && apt-get -qq 
 run git clone https://github.com/SnowWindDancing/my-docker.git
 #run mkdir my-docker
 #copy *  my-docker
-run cd my-docker && ls && run ffmpeg -i test.mp3
+run cd my-docker &&  ffmpeg -i test.mp3
 #run pip install -U openai-whisper
 #run whisper test.mp3  --model medium
