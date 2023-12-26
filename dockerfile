@@ -4,4 +4,4 @@ run git clone https://github.com/SnowWindDancing/my-docker.git
 #run mkdir my-docker
 #copy *  my-docker
 run pip install -U openai-whisper
-run whisper my-docker/test.mp3  --model medium
+run whisper my-docker/test.mp3  --model large-v3
