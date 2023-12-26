@@ -12,11 +12,10 @@ jobs:
     # 检出代码
     - uses: actions/checkout@v2
     - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJSON(github) }}
       run: 
         echo "Hello ${{ github.event.commits[0].id }}"
-        cp ${{ github.workspace }} .
+        mkdir my-docker
+        cp ${{ github.workspace }} my-docker
         ls
     - name: Login docker hub
       env:
