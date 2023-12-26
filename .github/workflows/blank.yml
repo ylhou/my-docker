@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Dump GitHub context
       run: 
-        echo ${{ github.workspace }}
+        cd ${{ github.workspace }} && ls
     - name: Login docker hub
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
