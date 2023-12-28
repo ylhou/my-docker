@@ -1,10 +1,7 @@
 name: 构建docker镜像
 env:
   my_dockerfile: whisper
-on:
-  # main分支的push操作会触发当前脚本的执行
-  push:
-    branches: [ main ]
+on: workflow_dispatch
 
 jobs:
   build:
