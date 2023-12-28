@@ -5,5 +5,5 @@ run curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 run  export DEBIAN_FRONTEND=noninteractive && apt-get -qq install git-lfs
 run pip install -U openai-whisper
 copy * /app
-run /app/whisper test.mp3 --model tiny
+run whisper /app/test.mp3 --model tiny
 run ls
