@@ -1,0 +1,29 @@
+name: 构建docker镜像
+on:
+  # main分支的push操作会触发当前脚本的执行
+  push:
+    branches: [ main ]
+    paths:
+      - dockerfile
+
+jobs:
+  build:
+    # 当前脚本是在容器中运行的，对应的镜像是ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+    # 检出代码
+    - uses: actions/checkout@v2
+    - name: Dump GitHub context
+      run: 
+        cd ${{ github.workspace }} && ls
+    - name: Login docker hub
+      env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      # 指定login命令登录hub.docker.com，帐号和密码已经在GitHub网页中配置好了
+      run: 
+        docker login   --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-hangzhou.aliyuncs.com
+        #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+    - name: Build dockerfile
+      run: 
+        docker build --output "type=image,push=true" -t registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:torch2.1.2-cuda12.1-cudnn8-devel .
