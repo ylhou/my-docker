@@ -1,6 +1,7 @@
 name: 构建docker镜像
 env:
   my_dockerfile: whisper
+# 手动触发
 on: workflow_dispatch
 
 jobs:
