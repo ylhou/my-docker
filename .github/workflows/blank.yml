@@ -3,6 +3,8 @@ on:
   # main分支的push操作会触发当前脚本的执行
   push:
     branches: [ main ]
+    paths:
+     - .github/workflows/*
 
 jobs:
   build:
