@@ -1,10 +1,13 @@
 name: 构建docker镜像
+env:
+  my_dockerfile: whisper
 on:
   # main分支的push操作会触发当前脚本的执行
   push:
     branches: [ main ]
     paths:
-      - whisper-dockerfile
+      - .github/workflows/docker-image.yml
+      - $my_dockerfile
 
 jobs:
   build:
@@ -26,4 +29,4 @@ jobs:
         #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
-        docker build --output "type=image,push=true" -t registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:whisper .
+        docker build --output "type=image,push=true"  -f $my_dockerfile -t  registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:$my_dockerfile .
