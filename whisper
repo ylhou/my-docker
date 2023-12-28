@@ -4,5 +4,5 @@ RUN  export DEBIAN_FRONTEND=noninteractive  && apt-get -qq update  && apt-get -q
 run curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
 run  export DEBIAN_FRONTEND=noninteractive && apt-get -qq install git-lfs
 run pip install -U openai-whisper
-run whisper test.mp3 --model large-v3
+run whisper test.mp3 --model large-v3 
 run ls
