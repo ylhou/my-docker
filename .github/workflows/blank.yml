@@ -26,4 +26,4 @@ jobs:
         #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
-        docker build --output "type=image,push=true" -t registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:torch2.1.2-cuda12.1-cudnn8-devel .
+        docker build --output "type=image,push=true" -t registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:whisper .
