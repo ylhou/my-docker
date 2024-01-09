@@ -1,1 +1,9 @@
 from python:3.11
+run pip install accelerate==0.23.0
+run pip install bitsandbytes==0.41.1
+run pip install gradio==3.48.0
+run pip install protobuf==3.20.3
+run pip install scipy==1.10.1
+run pip install sentencepiece==0.1.99
+run pip install spaces==0.16.1
+run pip install transformers>=4.35.0
