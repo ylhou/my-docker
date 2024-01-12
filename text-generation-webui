@@ -6,5 +6,6 @@ RUN pip3 install --upgrade pip setuptools && \
     pip3 install torch torchvision torchaudio
 run git clone https://github.com/oobabooga/text-generation-webui.git
 run cd text-generation-webui && pip install -r requirements.txt
+run pip install jinja2==3.1.2
 
 
