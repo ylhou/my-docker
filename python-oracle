@@ -1,0 +1,3 @@
+FROM python:3.11
+RUN apt-get update && apt-get install -y libaio1 curl
+pip install pandas cx_Oracle
