@@ -2,6 +2,6 @@ FROM python:3.11
 workdir /app
 RUN apt update &&  apt upgrade -y && apt install -y libaio1 curl zip unzip vim
 run curl -O https://builds.openlogic.com/downloadJDK/openlogic-openjdk/8u392-b08/openlogic-openjdk-8u392-b08-linux-x64-deb.deb
-run apt install openlogic-openjdk-8u392-b08-linux-x64-deb.deb
+run apt install ./openlogic-openjdk-8u392-b08-linux-x64-deb.deb
 run curl -O https://download.oracle.com/otn-pub/otn_software/jdbc/233/ojdbc8.jar
 run pip install pandas jaydebeapi
