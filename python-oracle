@@ -1,6 +1,6 @@
 FROM python:3.11
 workdir /app
 RUN apt update &&  apt upgrade -y && apt install -y libaio1 curl zip unzip vim
-run apt install -y openjdk
+run apt-cache search openjdk
 run curl -O https://download.oracle.com/otn-pub/otn_software/jdbc/233/ojdbc8.jar
 run pip install pandas jaydebeapi
