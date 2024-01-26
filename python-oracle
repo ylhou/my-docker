@@ -1,8 +1,5 @@
 FROM python:3.11
-RUN apt-get update && apt-get install -y libaio1 curl zip unzip
-run curl -O https://download.oracle.com/otn_software/linux/instantclient/2113000/instantclient-basic-linux.x64-21.13.0.0.0dbru.zip
-run unzip instantclient-basic-linux.x64-21.13.0.0.0dbru.zip
-run ln -s /instantclient_21_13 /usr/local/instantclient
-ENV ORACLE_HOME /usr/local/instantclient
-ENV LD_LIBRARY_PATH /usr/local/instantclient
-run pip install pandas cx_Oracle
+workdir /app
+RUN apt-get update && apt-get install -y libaio1 curl zip unzip vim openjdk8
+run curl -O https://download.oracle.com/otn-pub/otn_software/jdbc/233/ojdbc8.jar
+run pip install pandas jaydebeapi
