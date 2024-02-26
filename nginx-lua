@@ -1,1 +1,2 @@
 from fabiocicerchia/nginx-lua
+RUN luarocks install lua-cjson
