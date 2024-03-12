@@ -1,5 +1,5 @@
 from fabiocicerchia/nginx-lua:1.25.3-ubuntu22.04
 #from fabiocicerchia/nginx-lua:1.25.3-fedora39
-#run apt-get -qq update && apt-get -qq install libiconv-devel
+run apt-get -qq update && apt-get -qq install luarocks
 RUN luarocks install lua-cjson
 run luarocks install lua-iconv
