@@ -1,4 +1,4 @@
-from fabiocicerchia/nginx-lua:1.25.3-debian
+from fabiocicerchia/nginx-lua:1.25.3-ubuntu22.04
 #from fabiocicerchia/nginx-lua:1.25.3-fedora39
 run apt-get install libiconv-devel
 RUN luarocks install lua-cjson
