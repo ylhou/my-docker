@@ -1,2 +1,3 @@
 from fabiocicerchia/nginx-lua:1.25.3-fedora39
 RUN luarocks install lua-cjson
+run luarocks install lua-iconv
