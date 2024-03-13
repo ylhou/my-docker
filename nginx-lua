@@ -1,6 +1,6 @@
 from fabiocicerchia/nginx-lua:1.25.3-ubuntu22.04
 #from fabiocicerchia/nginx-lua:1.25.3-fedora39
-run apt-get -qq update && apt-get -qq install luarocks
+run apt-get -qq update && apt-get -qq install luarocks make
 # 安装iconv库
 run wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz
 run tar -xzvf libiconv-1.13.1.tar.gz
