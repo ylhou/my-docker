@@ -1,15 +1,15 @@
 from fabiocicerchia/nginx-lua:1.25.3-ubuntu22.04
 #from fabiocicerchia/nginx-lua:1.25.3-fedora39
-run apt-get -qq update && apt-get -qq install luarocks make
+run apt-get -qq update && apt-get -qq install luarocks make libiconv-hook-dev
 
 
 RUN luarocks install lua-cjson
 run luarocks install lua-iconv
 
 # 安装iconv库
-run wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz
-run tar -xzvf libiconv-1.13.1.tar.gz
-run cd libiconv-1.13.1 && ./configure --prefix=/usr/local
-run  cd libiconv-1.13.1 && make -j8 && make install
-run ln -s /usr/local/lib/libiconv.so /usr/lib
-run ln -s /usr/local/lib/libiconv.so.2 /usr/lib/libiconv.so.2
+#run wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz
+#run tar -xzvf libiconv-1.13.1.tar.gz
+#run cd libiconv-1.13.1 && ./configure --prefix=/usr/local
+#run  cd libiconv-1.13.1 && make -j8 && make install
+#run ln -s /usr/local/lib/libiconv.so /usr/lib
+#run ln -s /usr/local/lib/libiconv.so.2 /usr/lib/libiconv.so.2
