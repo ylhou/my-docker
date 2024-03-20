@@ -1,1 +1,4 @@
 from python:3.11
+run apt-get -qq update && apt-get -qq install tesseract-ocr libtesseract-dev
+run pip install python-docx
+run pip install pandas
