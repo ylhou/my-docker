@@ -1,5 +1,6 @@
 from python:3.11
-run apt-get -qq update && apt-get -qq install tesseract-ocr libtesseract-dev
+run apt-get -qq update && apt-get -qq install tesseract-ocr libtesseract-dev vim wget git
 run pip install python-docx 
 run pip install pandas
 run pip install pytesseract Pillow
+run git clone https://github.com/tesseract-ocr/tessdata.git
