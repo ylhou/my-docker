@@ -1,6 +1,6 @@
 name: 构建docker镜像
 env:
-  my_dockerfile: office_txt
+  my_dockerfile: nginx-lua
 # 手动触发
 on: workflow_dispatch
 
