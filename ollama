@@ -1,0 +1,2 @@
+from ollama/ollama
+ollama pull qwen:0.5b
