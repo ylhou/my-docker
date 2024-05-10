@@ -1,2 +1,2 @@
 from ollama/ollama
-run  ollama serve && ollama pull qwen:0.5b
+run  nohup ollama serve & && ollama pull qwen:0.5b
