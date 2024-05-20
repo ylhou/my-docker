@@ -1,2 +1,3 @@
 from ubuntu
-run apt -qq update && apt install -qq vim git ffmpeg
+run apt -qq update 
+run apt install -qq vim git ffmpeg
