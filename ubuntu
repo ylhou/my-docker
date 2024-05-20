@@ -1,1 +1,2 @@
 from ubuntu
+run apt -qq update && apt install -qq vim git ffmpeg
