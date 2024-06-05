@@ -1,3 +1,4 @@
 # docker out of docker
-  from python
+from python
+run apt-get -qq update && apt-get -qq install docker-ce-cli -y 
   
