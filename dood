@@ -1,4 +1,6 @@
 # docker out of docker
+# 运行的时候挂载一下docker的卷 
+# -v /var/run/docker.sock:/var/run/docker.sock 
 from python:3.11
 run apt update -y
 run wget -O docker-ce-cli.deb https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb 
