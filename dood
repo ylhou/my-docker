@@ -1,6 +1,6 @@
 # docker out of docker
-from ubuntu
-run apt update -y 
-run apt install python -y
-run apt-get  install docker-ce-cli -y 
+from python
+run apt update -y
+run wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb -y
+run  dpkg -i docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb -y
   
