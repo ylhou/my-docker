@@ -1,2 +1,2 @@
 from selenium/standalone-chrome
-run sodo apt install -y python
+run sudo apt install -y python
