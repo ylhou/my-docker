@@ -1,6 +1,6 @@
 name: 构建docker镜像
 env:
-  my_dockerfile: chrome
+  my_dockerfile: vllm
 # 手动触发
 on: workflow_dispatch
 
