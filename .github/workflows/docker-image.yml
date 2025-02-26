@@ -24,4 +24,4 @@ jobs:
         #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
-        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-shanghai.aliyuncs.com/ylhou/mineru:${my_dockerfile} .
+        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-shanghai.aliyuncs.com/chinaamc/mineru:1.2.0 .
