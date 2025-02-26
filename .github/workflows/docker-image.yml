@@ -1,6 +1,6 @@
 name: 构建docker镜像
 env:
-  my_dockerfile: sglang
+  my_dockerfile: dockerfile
 # 手动触发
 on: workflow_dispatch
 
@@ -20,8 +20,8 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       # 指定login命令登录hub.docker.com，帐号和密码已经在GitHub网页中配置好了
       run: 
-        docker login   --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-hangzhou.aliyuncs.com
+        docker login   --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
         #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
-        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-hangzhou.aliyuncs.com/xuefengfeiwu/myimg:${my_dockerfile} .
+        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-shanghai.aliyuncs.com/ylhou/mineru:${my_dockerfile} .
