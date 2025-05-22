@@ -1,3 +1,6 @@
-from python:3.11
-run pip install -U einops flash_attn
-run pip install -U ragatouille
+from pytorch/pytorch:2.1.2-cuda12.1-cudnn8-devel
+RUN  export DEBIAN_FRONTEND=noninteractive && apt-get -qq update && apt-get -qq install git
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install packaging && \
+    pip install -U einops flash_attn && \
+    pip install -U ragatouille
