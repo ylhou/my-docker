@@ -1,0 +1,3 @@
+from python:3.11
+run pip install -U einops flash_attn
+run pip install -U ragatouille
