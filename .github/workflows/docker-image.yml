@@ -1,6 +1,6 @@
 name: 构建docker镜像
 env:
-  my_dockerfile: vllm
+  my_dockerfile: colbert
 # 手动触发
 on: workflow_dispatch
 
@@ -24,4 +24,4 @@ jobs:
         #docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     - name: Build dockerfile
       run: 
-        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-shanghai.aliyuncs.com/chinaamc/vllm:0.7.3.cuda12.4 .
+        docker build --output "type=image,push=true"  -f ${my_dockerfile} -t  registry.cn-shanghai.aliyuncs.com/chinaamc/colbert:v1 .
