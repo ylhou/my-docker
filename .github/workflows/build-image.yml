@@ -40,6 +40,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          provenance: false
+          sbom: false
           tags: ghcr.io/${{ github.repository_owner }}/ai-framework:cuda128-torch-paddle
           # 开启内联缓存，减少下次构建时间
           cache-from: type=gha
