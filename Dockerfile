@@ -4,10 +4,17 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1
 
+# 1. 安装基础依赖、添加 deadsnakes PPA 并安装 Python 3.11 及其开发包
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-dev \
+    software-properties-common \
+    ca-certificates \
+    curl \
+    && add-apt-repository -y ppa:deadsnakes/ppa \
+    && apt-get update && apt-get install -y --no-install-recommends \
+    python3.11 \
+    python3.11-dev \
+    python3.11-venv \
+    python3.11-distutils \
     build-essential \
     cmake \
     git \
@@ -15,25 +22,29 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2-dev \
     zlib1g-dev \
     libopenblas-dev \
-    ca-certificates \
-    && ln -sf /usr/bin/python3 /usr/bin/python \
     && rm -rf /var/lib/apt/lists/*
+
+# 2. 软链接将 python 和 python3 指向 python3.11
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1 \
+    && update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
+# 3. 安装针对 Python 3.11 的 pip
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11 \
+    && python -m pip install --upgrade pip setuptools wheel
 
 WORKDIR /workspace
 
-RUN python -m pip install --upgrade pip setuptools wheel
-
-# 1. 安装 PyTorch (CUDA 12.8)
+# 4. 安装 PyTorch (CUDA 12.8)
 RUN pip install torch==2.11.0+cu128 \
     --extra-index-url https://download.pytorch.org/whl/cu128
 
-# 2. 安装 PaddlePaddle-GPU
+# 5. 安装 PaddlePaddle-GPU
 RUN pip install paddlepaddle-gpu==2.6.2
 
-# 3. 安装 paddlenlp
+# 6. 安装 paddlenlp
 RUN pip install paddlenlp==2.6.1 --no-deps
 
-# 4. 安装其他依赖（加上 --ignore-installed 防止系统旧包阻断安装）
+# 7. 安装其他依赖
 COPY requirements.txt .
 RUN pip install --ignore-installed -r requirements.txt
 
